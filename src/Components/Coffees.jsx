@@ -2,7 +2,7 @@
 import { Link } from "react-router";
 import CoffeeCard from "./CoffeeCard";
 import bg from "../assets/images/more/1.png";
-const Coffees = ({ coffees }) => {
+const Coffees = ({ coffees, presentCoffee, setPresentCoffee }) => {
   return (
     <div className="my-10">
       <div className="text-center my-4">
@@ -16,7 +16,12 @@ const Coffees = ({ coffees }) => {
         style={{ backgroundImage: `url(${bg})` }}
       >
         {coffees.map((coffee) => (
-          <CoffeeCard key={coffee._id} coffee={coffee} />
+          <CoffeeCard
+            key={coffee._id}
+            coffee={coffee}
+            presentCoffee={presentCoffee}
+            setPresentCoffee={setPresentCoffee}
+          />
         ))}
       </div>
     </div>

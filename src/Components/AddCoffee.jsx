@@ -72,6 +72,7 @@ const AddCoffee = () => {
                   name="name"
                   placeholder="Enter coffee name"
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
               {/* Chef */}
@@ -85,6 +86,7 @@ const AddCoffee = () => {
                   name="chef"
                   placeholder="Enter chef name"
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
               {/* Supplier */}
@@ -98,6 +100,7 @@ const AddCoffee = () => {
                   name="supplier"
                   placeholder="Enter supplier name"
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
               {/* Taste */}
@@ -111,6 +114,7 @@ const AddCoffee = () => {
                   name="taste"
                   placeholder="Enter coffee taste"
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
               {/* Category */}
@@ -124,6 +128,7 @@ const AddCoffee = () => {
                   name="category"
                   placeholder="Enter coffee category"
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
               {/* Details */}
@@ -137,6 +142,7 @@ const AddCoffee = () => {
                   name="details"
                   placeholder="Enter coffee details"
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
             </div>
@@ -152,6 +158,7 @@ const AddCoffee = () => {
                 name="photo"
                 placeholder="Enter photo URL"
                 className="input input-bordered w-full"
+                required
               />
             </div>
 
