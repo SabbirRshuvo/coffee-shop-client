@@ -1,6 +1,6 @@
 import error from "../assets/images/404/404.gif";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 const Error = () => {
   return (
     <div>

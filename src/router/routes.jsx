@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { createBrowserRouter } from "react-router";
+
 import Main from "../MainLayout/main";
-import AddCoffee from "../Components/AddCoffee";
-import UpdateCoffee from "../Components/UpdateCoffee";
-import Home from "../Components/Home";
-import CoffeeDetails from "../Components/CoffeeDetails";
-import Error from "../Components/Error";
+import Error from "../Pages/Error";
+import Home from "../Pages/Home";
+import AddCoffee from "../Pages/AddCoffee";
+import UpdateCoffee from "../Pages/UpdateCoffee";
+import CoffeeDetails from "../Pages/CoffeeDetail";
 const routes = createBrowserRouter([
   {
     path: "/",

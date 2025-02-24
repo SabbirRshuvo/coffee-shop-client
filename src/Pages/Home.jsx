@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router";
-import Coffees from "./Coffees";
-import Banner from "./Banner";
-import Quality from "./Quality";
+import Coffees from "../Components/Coffees";
+import Banner from "../Components/Banner";
+import Quality from "../Components/Quality";
 import { useState } from "react";
-import Follow from "./Follow";
+import Follow from "../Components/Follow";
 
 const Home = () => {
   const coffees = useLoaderData();
