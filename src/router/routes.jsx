@@ -19,7 +19,7 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:3000/coffee"),
+        loader: () => fetch("https://coffee-shop-server-tan.vercel.app/coffee"),
       },
       {
         path: "/addcoffee",
@@ -29,13 +29,17 @@ const routes = createBrowserRouter([
         path: "/updatecoffee/:id",
         element: <UpdateCoffee />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/coffee/${params.id}`),
+          fetch(
+            `https://coffee-shop-server-tan.vercel.app/coffee/${params.id}`
+          ),
       },
       {
         path: "/coffeedetails/:id",
         element: <CoffeeDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/coffee/${params.id}`),
+          fetch(
+            `https://coffee-shop-server-tan.vercel.app/coffee/${params.id}`
+          ),
       },
       {
         path: "/register",
@@ -48,7 +52,7 @@ const routes = createBrowserRouter([
       {
         path: "/users",
         element: <Users />,
-        loader: () => fetch("http://localhost:3000/users"),
+        loader: () => fetch("https://coffee-shop-server-tan.vercel.app/users"),
       },
     ],
   },

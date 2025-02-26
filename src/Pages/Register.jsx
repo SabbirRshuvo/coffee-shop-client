@@ -20,7 +20,7 @@ const Register = () => {
       console.log(result.user);
       const creationTime = result?.user?.metadata?.creationTime;
       const newUsers = { userName, email, password, creationTime };
-      fetch("http://localhost:3000/users", {
+      fetch("https://coffee-shop-server-tan.vercel.app/users", {
         method: "POST",
         headers: {
           "content-type": "application/json",
