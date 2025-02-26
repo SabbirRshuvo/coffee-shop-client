@@ -5,18 +5,34 @@ import image from "../assets/images/more/14.jpg";
 import { FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
 import { AuthContext } from "../Provider/AuthProvider";
 const Register = () => {
-  const { handleResigter } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const { handleRegister } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("user ");
     const form = e.target;
+    const userName = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    console.log(email, password, userName);
+    handleRegister(email, password).then((result) => {
+      console.log(result.user);
+      const creationTime = result?.user?.metadata?.creationTime;
+      const newUsers = { userName, email, password, creationTime };
+      fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newUsers),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    });
     form.reset();
-    handleResigter(email, password);
   };
 
   return (
@@ -115,7 +131,7 @@ const Register = () => {
 
               {/* Sign In Button */}
               <button className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 cursor-pointer">
-                Sign In
+                Sign Up
               </button>
             </form>
             <p className="text-center mt-4 text-gray-600">

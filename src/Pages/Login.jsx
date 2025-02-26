@@ -8,7 +8,6 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { handleSignIn } = useContext(AuthContext);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("user ");
@@ -16,7 +15,22 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    handleSignIn(email, password);
+    handleSignIn(email, password).then((result) => {
+      console.log(result.user);
+      const lastSignInTime = result?.user?.metadata?.lastSignInTime;
+      const loginInfo = { email, lastSignInTime };
+      fetch("http://localhost:3000/users", {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(loginInfo),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    });
     form.reset();
   };
 

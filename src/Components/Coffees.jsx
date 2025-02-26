@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router";
-import CoffeeCard from "./CoffeeCard";
 import bg from "../assets/images/more/1.png";
+import CoffeeCard from "./CoffeeCard";
 const Coffees = ({ coffees, presentCoffee, setPresentCoffee }) => {
   return (
     <div className="my-10">
